@@ -20,21 +20,21 @@ MNIST dataset, consists of 28x28 grayscale images of handwritten digits from 0 t
 The generator is a neural network that takes random noise as input and transforms it into a 28x28 image. The architecture is as follows:
 
 - Input: Latent vector (random noise)
-- Fully connected layer `then` BatchNorm `then` LeakyReLU
-- Fully connected layer `then` BatchNorm `then` LeakyReLU
-- Fully connected layer `then` BatchNorm `then` LeakyReLU
-- Output: 28x28x1 image (with a tanh activation)
+- `Fully connected layer` then `BatchNormalization` then `LeakyReLU`
+- `Fully connected layer` then `BatchNormalization` then `LeakyReLU`
+- `Fully connected layer` then `BatchNormalization` then `LeakyReLU`
+- Output: 28x28x1 image with a `tanh` activation
 
 2.**Discriminator:-**
 The discriminator is a neural network that takes an image as input and outputs a probability score indicating whether the image is real or fake. 
 The architecture is as follows:
 
 - Input: 28x28 image
-- Fully connected layer `then` BatchNorm
-- Fully connected layer `then` BatchNorm `then` Dropout
-- Fully connected layer → Sigmoid activation
+- `Fully connected layer` then `BatchNormalization`
+- `Fully connected layer` then `BatchNormalization` then `Dropout`
+- `Fully connected layer` with `Sigmoid` activation
 
-**Results:-**
+## Results
 
 After training, the GAN  able to generate realistic images that resemble the MNIST dataset. You can monitor the training process by checking the generated 
 images in the `gan.gif` file.
